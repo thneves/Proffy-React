@@ -11,6 +11,8 @@ import './styles.css';
 
 interface PageHeaderProps {
     title: string;
+    description?: string; // question to mark to indicate that this is not mandatory.
+    
 }
 
 const PageHeader: React.FC<PageHeaderProps> = (props) => {
@@ -25,6 +27,8 @@ const PageHeader: React.FC<PageHeaderProps> = (props) => {
 
         <div className="header-content">
             <strong>{props.title}</strong>
+             {props.description && <p>{props.description}</p>}
+             {/* could aslo be a ternary operation */}
             {props.children}
         </div>
         
